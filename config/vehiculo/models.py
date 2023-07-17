@@ -23,4 +23,7 @@ class Vehiculo(models.Model):
     updated = models.DateTimeField(auto_now=True, verbose_name='Fecha de actuialización')
     
     class Meta:
+        permissions = (
+            ("visualizar_catalogo", "add_vehiculomodel"),
+            )
         verbose_name_plural = "Vehiculos"
