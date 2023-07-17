@@ -8,13 +8,13 @@
     {%bootstrap_messages %} {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
-    <title>Template con Boostrap</title>
+    <title>Catalogo de Vehiculos</title>
   </head>
   <body>
     {% block navbar %}
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">{% if user.is_authenticated %}Bienvenido {{user.username}} {% else %}Sistema{% endif %}</a>
+        <a class="navbar-brand" href="#">{% if user.is_authenticated %}Bienvenido {{user.username}} {% else %}Vehiculos{% endif %}</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -32,24 +32,27 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#"></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/authors">Autores</a>
-            </li>
             {% if user.is_staff %}
               <li class="nav-item">
-                <a class="nav-link" href="/authorform">Agregar Autor</a>
+                <a class="nav-link" href="/authorform">Agregar</a>
               </li>
             {% endif %}
             <li class="nav-item">
-              <a class="nav-link" href="/logout">Salir</a>
+              <a class="nav-link" href="/authors">Listar</a>
             </li>
+
+
           </ul>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Salir</a>
           </li>
           </ul>
           {% endif %}
