@@ -4,3 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 
 def index(request):
     return HttpResponse("Hola Alejandra")
+
+def menu_view(request):
+    template_name = 'menu.html'
+    return render(request, template_name)
