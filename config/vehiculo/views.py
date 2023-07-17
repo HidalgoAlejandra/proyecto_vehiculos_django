@@ -3,7 +3,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 # Create your views here.
 
 def index(request):
-    return HttpResponse("Hola Alejandra")
+    return render(request, 'index.html')
+    # return HttpResponse("Hola Alejandra")
 
 def menu_view(request):
     template_name = 'menu.html'
