@@ -10,6 +10,6 @@ urlpatterns = [
     path('login/', login_view, name='login'),
     path('register/', register_view, name='register'),
     path('datosform/', datosform_view, name='datosform'),
-    path('vehiculoform/', vehiculoform_view, name='vehiculoform'),
+    path('add/', vehiculoform_view, name='vehiculoform'),
     path('thanks/', gracias_view, name='gracias'),
 ]

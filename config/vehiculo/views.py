@@ -88,7 +88,7 @@ def register_view(request):
     context = {"register_form": form}
     return render(request,"registro.html", context)
 
-@staff_member_required(login_url='/authors/')
+@staff_member_required(login_url='/catalogo/')
 def vehiculoform_view(request):
     context = {}
     #crear el objeto form
@@ -97,7 +97,9 @@ def vehiculoform_view(request):
     if form.is_valid():
         #guardar datos del modelo
         form.save()
-        return HttpResponseRedirect('/thanks/')
+        # return HttpResponseRedirect('/thanks/')
+        messages.info(request, f"Datos ingresados correctamente!!!.")
+        return HttpResponseRedirect('/catalogo/')
     
     context['form'] = form
     return render(request, "datosform.html", context)
