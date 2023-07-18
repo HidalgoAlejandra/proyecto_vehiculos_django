@@ -23,7 +23,13 @@
             <td>{{vehiculo.serial_motor}}</td>
             <td>{{vehiculo.categoria}}</td>
             <td>{{vehiculo.precio}}</td>
-            <td>Medio</td>
+            {% if vehiculo.precio < 10000 %}
+              <td>Bajo</td>
+            {% elif vehiculo.precio < 30000 %}
+              <td>Medio</td>
+            {% else %} 
+              <td>Alto</td>
+            {% endif %}
           </tr>
         {% endfor %}
     </tbody>
