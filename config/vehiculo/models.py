@@ -24,6 +24,7 @@ class Vehiculo(models.Model):
     
     class Meta:
         permissions = (
-            ("visualizar_catalogo", "add_vehiculomodel"),
+            ("visualizar_catalogo", "Listado de vehiculos"),
+            ("add_vehiculomodel","Agregar vehiculo"),
             )
         verbose_name_plural = "Vehiculos"
